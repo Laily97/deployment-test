@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import config from "./config";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React (Deploy Test)
-          <div>BaseURL: {config.baseURL}</div>
         </a>
       </header>
     </div>
