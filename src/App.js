@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import API from "./config/instance";
+
 
 function App() {
+
+  API.get("/ltaodataservice/TaxiStands").then(res => {
+    console.log(res);
+  });
+
   return (
     <div className="App">
       <header className="App-header">
