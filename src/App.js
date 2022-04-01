@@ -7,6 +7,7 @@ function App() {
 
   API.get("/ltaodataservice/TaxiStands").then(res => {
     console.log(res);
+    alert('here');
     let data = res.value;
   });
 

@@ -15,18 +15,13 @@ class Home extends React.Component {
       this.listOwner();
     }
   
-    listOwner() {
-        API.get("/ltaodataservice/TaxiStands").then(res => {
-            console.log(res);
-            // let data = res.value;
+    async listOwner() {
+      const data = await API.get("/ltaodataservice/TaxiStands");
+      console.log(data);
+        this.setState((state) => {
+          state.owners = data.value;
+          return state;
         });
-
-    //   const data =  API.get("/ltaodataservice/TaxiStands");
-    //   console.log(data);
-    //     this.setState((state) => {
-    //       state.owners = data.value;
-    //       return state;
-    //     });
     }
   
     render() {
@@ -34,9 +29,9 @@ class Home extends React.Component {
         <>
           page here
           <ul>
-            {/* {this.state.owners.map((o) => {
+            {this.state.owners.map((o) => {
               return <li>{o.TaxiCode}</li>;
-            })} */}
+            })}
           </ul>
         </>
       );
