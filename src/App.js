@@ -7,6 +7,7 @@ function App() {
 
   API.get("/ltaodataservice/TaxiStands").then(res => {
     console.log(res);
+    let data = res.value;
   });
 
   return (
@@ -24,6 +25,7 @@ function App() {
         >
           Learn React (Deploy Test)
         </a>
+        {data}
       </header>
     </div>
   );

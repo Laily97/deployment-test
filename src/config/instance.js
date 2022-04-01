@@ -11,9 +11,7 @@ let axiosConfig = {
 const API = axios.create({
     baseURL: 'http://datamall2.mytransport.sg',
     headers: {
-        'AccountKey': 'PA5n2GCORcGlReNCduPtJg==',
-        "Access-Control-Allow-Origin": "*",
-        'Access-Control-Allow-Credentials': true
+        'AccountKey': 'PA5n2GCORcGlReNCduPtJg=='
     }
 });
 
