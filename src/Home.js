@@ -16,7 +16,7 @@ class Home extends React.Component {
     }
   
     async listOwner() {
-      const data =  API.get("/ltaodataservice/TaxiStands");
+      const data = await API.get("/ltaodataservice/TaxiStands");
       console.log(data);
         this.setState((state) => {
           state.owners = data.value;
