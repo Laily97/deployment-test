@@ -1,32 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 import API from "./config/instance";
+import { useEffect, useState } from 'react';
 
-API.get("/ltaodataservice/TaxiStands").then(res => {
-  console.log(res);
-  alert('here');
-  let data = res.value;
-});
+
 
 function App() {
+  const [taxis, setTaxis] = useState([]);
 
- 
+  useEffect(() => {
+    getAllTaxis()
+  })
+
+  const getAllTaxis = () => {
+    API.get("/ltaodataservice/TaxiStands")
+    .then(res => {
+      console.log(res);
+      alert('here');
+      let data = res.value;
+    })
+    .catch(error => console.error(`Error: ${error}`));
+  }
+
+  
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React (Deploy Test)
-        </a>
+          <h1>Learn React (Deploy Test)</h1>
       </header>
     </div>
   );
