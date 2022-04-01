@@ -1,3 +1,4 @@
+import React from "react";
 import API from "./config/instance";
 
 class Home extends React.Component {
