@@ -16,14 +16,12 @@ class Home extends React.Component {
     }
   
     async listOwner() {
-      const { status, data } = await API.get("/ltaodataservice/TaxiStands");
-      if (status === 200) {
-          console.log(data);
+      const data =  API.get("/ltaodataservice/TaxiStands");
+      console.log(data);
         this.setState((state) => {
           state.owners = data.value;
           return state;
         });
-      }
     }
   
     render() {
