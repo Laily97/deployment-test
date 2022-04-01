@@ -2,14 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import API from "./config/instance";
 
+API.get("/ltaodataservice/TaxiStands").then(res => {
+  console.log(res);
+  alert('here');
+  let data = res.value;
+});
 
 function App() {
 
-  API.get("/ltaodataservice/TaxiStands").then(res => {
-    console.log(res);
-    alert('here');
-    let data = res.value;
-  });
+ 
 
   return (
     <div className="App">
@@ -26,7 +27,6 @@ function App() {
         >
           Learn React (Deploy Test)
         </a>
-        {data}
       </header>
     </div>
   );
